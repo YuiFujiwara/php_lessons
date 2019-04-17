@@ -1,17 +1,16 @@
 <?PHP
 
-// 文字列
-// "" でできる展開 → 特殊文字(「\n」→改行, 「\t」→タブ) ,変数
-// '' でできる展開 → 上記の展開ができない
+// if 条件分岐
+/* 比較演算子 > < >= <= ==(←値の比較) ===(←値と型の比較)
+               !=(値,等しくない) !==(値と型,等しくない) */
+// 論理演算子 and か && , or か || , !←（否定,not）
 
-// $name = "taguchi";
-// $s1 = "hello $name!\nhello again!";
-// $s1 = "hello {$name}!\nhello again!";
-// $s1 = "hello ${name}!\nhello again!";
-// $s2 = 'hello $name!\nhello again!';
-// var_dump($s1);
-// var_dump($s2);
+$score = 40;
 
-// 連結 「.」使う
-$s = "hello" . "world" ;
-var_dump($s);
+if ($score > 80) {
+  echo "great!";
+} elseif ($score > 60) {
+  echo "good!";
+}else {
+  echo "so so ...";
+}

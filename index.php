@@ -1,12 +1,23 @@
 <?PHP
 
-// 定数: 変更されない値につけるラベル（全て大文字を使う）
+// 数値型の演算
 
-define("MY_EMAIL", "taguchi@dotinstall.com");
+// 四則計算： + - * /  %(余り) **(べき乗)
 
-echo MY_EMAIL;
-// MY_EMAIL = "hogehoge";
+// $x = 10 % 3; // 1
+// $y = 30.2 / 4; // 7.55
+// var_dump($x);
+// var_dump($y);
 
-var_dump(__LINE__); //10
-var_dump(__FILE__);
-var_dump(__DIR__);
+// 単項演算子 ++ --
+// $z = 5;
+// $z++; // 6
+// var_dump($z);
+// $z--; //5
+// var_dump($z);
+
+//代入を伴う演算子
+$x = 5;
+// $x = $x + 2;
+$x *= 2; // 10
+var_dump($x);

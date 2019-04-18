@@ -1,20 +1,24 @@
 <?PHP
 
-// ループ処理（繰り返し）
-// for
-// break : ループを抜ける
-// continue : それ以降の処理（には影響さ）せずにループに移る
+// 配列
+// key value
 
-// $i = 0;
-// while ($i < 10) {
-//   echo $i;
-//   $i++;
-// }
+$sales = array (
+  "tagjchi" => 200,
+  "fkoji" => 800,
+  "dotinstall" => 600,
+);
 
-for ($i = 0; $i < 10; $i++) {
-  if ($i === 5) {
-    // break;
-    continue;
-  }
-  echo $i;
-}
+// PHP5.4 以降 では上記のコードを簡略化可能
+$sales = [
+  "tagjchi" => 200,
+  "fkoji" => 800,
+  "dotinstall" => 600,
+];
+
+var_dump($sales["fkoji"]); //800
+$sales["fkoji"] = 900;
+var_dump($sales["fkoji"]); //900
+
+$colors = ["red", "blue", "pink"];
+var_dump($colors[1]); // blue

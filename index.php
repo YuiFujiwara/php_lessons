@@ -16,4 +16,4 @@ $s2 = "ねこ";
 
 $colors = ["red", "blue", "pink"];
 echo count($colors);
-echo implode("@", $colors); //配列の要素をある区切り文字を挟んで連結（この場合は@）
+echo implode("@", $colors); // implode:配列の要素をある区切り文字を挟んで連結（この場合は@）

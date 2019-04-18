@@ -1,14 +1,20 @@
 <?PHP
 
-// 抽象クラス
+// interface : このクラスはこのメソッドを必ず実装してくださいよ、というルールを定義するための仕組み。抽象クラスと違って複数実装できる。
 
-abstract class BaseUser {
-  public $name;
-  abstract public function sayHi();
+interface sayHi {
+  public function sayHi();
 }
 
-class User extends BaseUser {
-  public function sayHi() {
-    echo "hello from User";
-  }
+interface sayHello {
+  public function sayHello();
+}
+
+class User implements sayHi, sayHello {
+ public function sayHi() {
+   echo "hi!";
+ }
+ public function sayHello() {
+   echo "hello!";
+ }
 }

@@ -1,32 +1,29 @@
 <?PHP
 
-// クラスの継承
+// アクセス権
+// - private: そのクラス内からのみアクセス可能
+// - protected: そのクラス+親子クラス内からのみアクセス可能
+// - public: どこからでもアクセス可能
 
-//親クラス
 class User {
-  public $name;
+  // public $name;
+  // private $name;
+  protected $name;
   public function __construct($name) {
     $this->name = $name;
   }
-  final public function sayHi() {
+  public function sayHi() {
     echo "hi, i am $this->name!";
   }
 }
 
-//子クラス
 class AdminUser extends User {
   public function sayHello() {
-  echo "hello from Admin!";
+  echo "hello from $this->name";
   }
- // override （子クラスで親クラスを上書き、親クラスの上書きしたくない部分にfinalで上書き禁止にできる。final消せばまた上書き可能になる。）
- public function sayHi() {
-   echo "[admin] hi, i am $this->name!";
- }
 }
 
 $tom = new User("Tom");
+// echo $tom->name;
 $steve = new AdminUser("Steve");
-// echo $steve->name;
-$tom->sayHi();
-$steve->sayHi();
-// $steve->sayHello();
+$steve->sayHello();

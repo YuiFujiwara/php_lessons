@@ -1,20 +1,18 @@
 <?PHP
 
-// interface : このクラスはこのメソッドを必ず実装してくださいよ、というルールを定義するための仕組み。抽象クラスと違って複数実装できる。
+// require : エラー出たとき、fatal error (が発生してその場で処理終了)
+// require_once (onceがつくとphpが自動的にそのファイルが読み込まれてるかを自動的にチェックして読み込まれてたらそれをスキップしてくれる)
 
-interface sayHi {
-  public function sayHi();
-}
+// require "User.class.php";
 
-interface sayHello {
-  public function sayHello();
-}
+// include : warning (を発生させて処理を続行)
+// include_once
 
-class User implements sayHi, sayHello {
- public function sayHi() {
-   echo "hi!";
- }
- public function sayHello() {
-   echo "hello!";
- }
-}
+// autoload : クラスにしか使えない(クラスが未定義だった場合に自動的に実行される)
+
+spl_autoload_register(function($class) {
+	require $class . ".class.php";
+});
+
+$bob = new User("Bob");
+$bob->sayHi();

@@ -1,21 +1,16 @@
 <?PHP
 
-// switch 条件分岐
+// ループ処理（繰り返し）
+// while （繰り返しの命令が前処理される）
+// do ... while （繰り返しの命令は後処理される）
 
-$signal = "green";
+$i = 100;
+// while ($i < 10) {
+//   echo $i;
+//   $i++;
+// }
 
-switch ($signal) {
-  case "red" :
-    echo "stop!";
-    break;
-  case "blue" :
-  case "green": //条件増やしたいときは、caseをそのまま追加すれば良い
-    echo "go!";
-    break;
-  case "yello" :
-    echo "caution!";
-    break;
-  default:
-    echo "wrong signal";
-    break;
-}
+do {
+  echo $i;
+  $i++;
+} while ($i < 10);

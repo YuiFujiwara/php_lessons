@@ -1,17 +1,14 @@
 <?PHP
 
-// 関数
+// 関数 (このコードではfunction)
 
-function sayHi($name = "taguchi") {
-  // echo "hi!" . $name;
-  return  "hi!" . $name;
+$lang = "ruby";
+
+//その関数内で定義した変数はその関数内でのみ有効
+function sayHi($name) {
+  $lang = "php";
+  echo "hi! $name from $lang";
 }
 
-// sayHi();
-
 sayHi("Tom");
-sayHi("Bob");
-sayHi();
-
-$s = sayHi();
-var_dump($s);
+var_dump($lang); // ruby

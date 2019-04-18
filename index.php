@@ -1,9 +1,16 @@
 <?PHP
 
-// Cookie
+// session
+// cookieのようにブラウザ側ではなく、サーバ側にデータを保存できる仕組み
+//sessionは大きいデータ保存できる、改ざんされない、中身が見られない
+//cookieは気軽に使える。しかし、sessionのメリットとは逆のことがデメリットとして挙げられる
 
-// setcookie("username", "taguchi");
-// setcookie("username", "taguchi", time()+60*60);
-setcookie("username", "taguchi", time()-60*60);
+session_start();
 
-echo $_COOKIE['username'];
+// $_SESSION['username'] = "taguchi";
+
+// echo $_SESSION['username'];
+
+// unset($_SESSION['username']);
+
+echo $_SESSION['username'];

@@ -1,24 +1,34 @@
 <?PHP
 
 // 配列
-// key value
+// foreach : 配列の内容をループ処理で取り出す
 
-$sales = array (
-  "tagjchi" => 200,
-  "fkoji" => 800,
-  "dotinstall" => 600,
-);
-
-// PHP5.4 以降 では上記のコードを簡略化可能
-$sales = [
-  "tagjchi" => 200,
-  "fkoji" => 800,
-  "dotinstall" => 600,
-];
-
-var_dump($sales["fkoji"]); //800
-$sales["fkoji"] = 900;
-var_dump($sales["fkoji"]); //900
+// $sales = [
+//   "taguchi" => 200,
+//   "fkoji" => 800,
+//   "dotinstall" => 600,
+// ];
+//
+// foreach ($sales as $key => $value) {
+//   echo " ($key) $value " ;
+// }
 
 $colors = ["red", "blue", "pink"];
-var_dump($colors[1]); // blue
+
+// foreach ($colors as $key => $value) {
+//   echo "$value";
+// }
+
+// foreach if while for で使える コロン構文
+
+foreach ($colors as $value) :
+  echo "$value ";
+endforeach;
+
+?>
+<!-- 上記の結果をHTMLのli要素で列挙したいとき -->
+<ul>
+  <?php foreach ($colors as $value) : ?>
+  <li><?php echo "$value "; ?></li>
+<?php endforeach; ?>
+</ul>

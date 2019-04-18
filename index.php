@@ -1,24 +1,32 @@
 <?PHP
 
-// User
+// クラスの継承
 
+//親クラス
 class User {
-  // property （変数）
   public $name;
-
-  // constructor （定数）
   public function __construct($name) {
     $this->name = $name;
   }
-
-  // method （定数）
-  public function sayHi() {
+  final public function sayHi() {
     echo "hi, i am $this->name!";
   }
 }
 
-$tom = new User("Tom");
-$bob = new User("Bob");
+//子クラス
+class AdminUser extends User {
+  public function sayHello() {
+  echo "hello from Admin!";
+  }
+ // override （子クラスで親クラスを上書き、親クラスの上書きしたくない部分にfinalで上書き禁止にできる。final消せばまた上書き可能になる。）
+ public function sayHi() {
+   echo "[admin] hi, i am $this->name!";
+ }
+}
 
-echo $tom->name; //Tom
-$bob->sayHi(); // hi, i am Bob!
+$tom = new User("Tom");
+$steve = new AdminUser("Steve");
+// echo $steve->name;
+$tom->sayHi();
+$steve->sayHi();
+// $steve->sayHello();
